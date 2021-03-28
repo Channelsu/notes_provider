@@ -10,6 +10,14 @@ class NotesOperation extends ChangeNotifier {
     return _notes;
   }
 
+  // コンストラクタ
+  NotesOperation() {
+    addNewNote('タイトル', '内容');
+    addNewNote('タイトル2', '内容2');
+    addNewNote('タイトル3', '内容3');
+  }
+
+
   // ノート追加メソッド
   void addNewNote(String title, String description){
     Note note = Note(title, description);
