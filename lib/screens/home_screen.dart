@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notesprovider/models/note.dart';
 import 'package:notesprovider/models/notes_operation.dart';
+import 'package:notesprovider/screens/add_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,6 +9,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlue,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => AddScreen()));
+        },
+        child: Icon(Icons.add, size: 30, color: Colors.lightBlue,),
+        backgroundColor: Colors.white,
+      ),
       appBar: AppBar(
         title: Text('ノートアプリ'),
         centerTitle: true,
