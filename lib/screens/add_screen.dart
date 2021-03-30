@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:notesprovider/models/notes_operation.dart';
+import 'package:provider/provider.dart';
 
 class AddScreen extends StatelessWidget {
   @override
@@ -44,7 +46,10 @@ class AddScreen extends StatelessWidget {
               ),
             ),
             FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Provider.of<NotesOperation>(context, listen: false).addNewNote(titleText, descriptionText);
+                Navigator.pop(context);
+              },
               color: Colors.white,
               child: Text('追加', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.lightBlue),),
             ),
